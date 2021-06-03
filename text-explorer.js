@@ -2,12 +2,18 @@ const prompt = require("prompt-sync")();
 
 let x = 0;
 let y = 0;
+
+console.log(`Welcome to the fantastical world of Coordinates!
+Your goal is to find the Enchanted Mouse.`);
+
 console.log(
-	`Your coordinates are ( ${x} , ${y} ). Would you like to go "up", "right", "down", or "left"? `
+	`Your find yourself in a town. Head in any direction to explore the world.
+    Your coordinates are: ( ${x} , ${y} ).
+     Would you like to go "up", "right", "down", or "left"? `
 );
 direction = prompt("> ");
 
-while (direction != "stop") {
+while (!(x === 4 && y === 3)) {
 	if (direction === "left") {
 		x = x - 1;
 	}
@@ -81,7 +87,7 @@ while (direction != "stop") {
 	// Left side of the map =========================================================================================================================
 	if (
 		(x === -3 || x === -4 || x === -5 || x === -6) &&
-		(y === -2 || y === -1 || y === 0 || y === 1)
+		(y === -2 || y === -1 || y === 0 || y === 1 || y === 2)
 	) {
 		console.log(
 			`You have entered a Green Meadow. There is grass everywhere. 
@@ -92,7 +98,7 @@ while (direction != "stop") {
 	}
 	if (
 		(x === -7 || x === -8 || x === -9 || x === -10) &&
-		(y === -2 || y === -1 || y === 0 || y === 1)
+		(y === -2 || y === -1 || y === 0 || y === 1 || y === 2)
 	) {
 		console.log(
 			`You enter a Fairy Garden. Wisps and Fairies zip all around you. 
@@ -196,15 +202,11 @@ while (direction != "stop") {
 		);
 		direction = prompt("> ");
 	}
-	// console.log(
-	//     `Your coordinates are ( ${x} , ${y} ). Would you like to go "up", "right", "down", or "left"? `
-	// );
-	// direction = prompt("> ");
 
 	// Right side of the map =========================================================================================================================
 	if (
 		(x === 3 || x === 4 || x === 5 || x === 6) &&
-		(y === -2 || y === -1 || y === 0 || y === 1)
+		(y === -2 || y === -1 || y === 0 || y === 1 || y === 2)
 	) {
 		console.log(
 			`You have entered a Golden Meadow. There is grass everywhere. 
@@ -215,7 +217,7 @@ while (direction != "stop") {
 	}
 	if (
 		(x === 7 || x === 8 || x === 9 || x === 10) &&
-		(y === -2 || y === -1 || y === 0 || y === 1)
+		(y === -2 || y === -1 || y === 0 || y === 1 || y === 2)
 	) {
 		console.log(
 			`You enter a River Run. Wisps and Fairies zip all around you. 
@@ -319,4 +321,7 @@ while (direction != "stop") {
 		);
 		direction = prompt("> ");
 	}
+	console.log(
+		`Congratulations you have found the Enchanted Mouse! Game over, you win!`
+	);
 }
